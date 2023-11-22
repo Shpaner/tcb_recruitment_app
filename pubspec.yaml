@@ -1,0 +1,31 @@
+name: tcb_recruitment_app
+description: The Code Brothers recruitment task.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^12.1.1
+  flutter_riverpod: ^2.4.2
+  riverpod_annotation: ^2.1.6
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  dio: ^5.3.3
+  infinite_scroll_pagination: ^4.0.0
+  cached_network_image: ^3.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  riverpod_generator: ^2.3.2
+  build_runner: ^2.4.6
+  freezed: ^2.4.3
+  json_serializable: ^6.7.1
+
+flutter:
+  uses-material-design: true
