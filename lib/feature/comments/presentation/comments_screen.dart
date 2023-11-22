@@ -4,6 +4,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:tcb_recruitment_app/common/app_bar.dart';
 import 'package:tcb_recruitment_app/feature/comments/domain/comment.dart';
 import 'package:tcb_recruitment_app/feature/comments/presentation/controller/comments_controller.dart';
+import 'package:tcb_recruitment_app/localization/generated/l10n.dart';
 import 'package:tcb_recruitment_app/utils/padding.dart';
 import 'package:tcb_recruitment_app/utils/sizes.dart';
 
@@ -26,7 +27,7 @@ class _CommentsScreenState extends ConsumerState<CommentsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MainAppBar('COMMENTS'),
+      appBar: MainAppBar(S.of(context).comments),
       body: PagedListView.separated(
         pagingController: ref.watch(commentsPagingControllerProvider),
         separatorBuilder: (_, __) => spaceH16,
@@ -98,12 +99,12 @@ class _ItemTitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Name: $name',
+          S.of(context).commentName(name),
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         spaceH8,
         Text(
-          'Email: $email',
+          S.of(context).commentEmail(email),
           style: Theme.of(context).textTheme.bodyMedium,
         ),
       ],

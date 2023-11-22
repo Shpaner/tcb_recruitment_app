@@ -7,6 +7,7 @@ import 'package:tcb_recruitment_app/common/app_bar.dart';
 import 'package:tcb_recruitment_app/feature/navigation/domain/app_routes.dart';
 import 'package:tcb_recruitment_app/feature/pictures/domain/picture.dart';
 import 'package:tcb_recruitment_app/feature/pictures/presentation/gallery/controller/pictures_gallery_controller.dart';
+import 'package:tcb_recruitment_app/localization/generated/l10n.dart';
 import 'package:tcb_recruitment_app/utils/constants.dart';
 import 'package:tcb_recruitment_app/utils/context.dart';
 import 'package:tcb_recruitment_app/utils/padding.dart';
@@ -31,7 +32,7 @@ class _PicturesScreenState extends ConsumerState<PicturesGalleryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MainAppBar('GALLERY'),
+      appBar: MainAppBar(S.of(context).gallery),
       body: PagedMasonryGridView.count(
         crossAxisCount: AppConstants.gridSize,
         pagingController: ref.watch(galleryPagingControllerProvider),

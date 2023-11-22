@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tcb_recruitment_app/feature/navigation/domain/app_routes.dart';
 import 'package:tcb_recruitment_app/feature/navigation/presentation/controller/navigation_holder_controller.dart';
+import 'package:tcb_recruitment_app/localization/generated/l10n.dart';
 
 class NavigationHolder extends ConsumerWidget {
   const NavigationHolder({
@@ -29,25 +30,25 @@ class NavigationHolder extends ConsumerWidget {
         type: BottomNavigationBarType.fixed,
         onTap: ref.read(navigationHolderControllerProvider.notifier).onSelectItem,
         currentIndex: selectedPage.index,
-        items: _tabs,
+        items: _tabs(context),
       ),
     );
   }
 
-  static const List<NavBarItem> _tabs = [
-    NavBarItem(
-      icon: Icon(Icons.pending_actions_outlined),
-      activeIcon: Icon(Icons.pending_actions_outlined),
-      label: 'Pictures',
-      initialLocation: AppRoutes.galleryScreenPath,
-    ),
-    NavBarItem(
-      icon: Icon(Icons.bar_chart),
-      activeIcon: Icon(Icons.bar_chart_outlined),
-      label: 'Comments',
-      initialLocation: AppRoutes.commentsScreenPath,
-    ),
-  ];
+  List<NavBarItem> _tabs(BuildContext context) => [
+        NavBarItem(
+          icon: const Icon(Icons.pending_actions_outlined),
+          activeIcon: const Icon(Icons.pending_actions_outlined),
+          label: S.of(context).pictures,
+          initialLocation: AppRoutes.galleryScreenPath,
+        ),
+        NavBarItem(
+          icon: const Icon(Icons.bar_chart),
+          activeIcon: const Icon(Icons.bar_chart_outlined),
+          label: S.of(context).comments,
+          initialLocation: AppRoutes.commentsScreenPath,
+        ),
+      ];
 }
 
 class NavBarItem extends BottomNavigationBarItem {

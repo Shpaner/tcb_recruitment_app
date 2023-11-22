@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.0
   go_router: ^12.1.1
   flutter_riverpod: ^2.4.2
   riverpod_annotation: ^2.1.6
@@ -29,3 +32,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+flutter_intl:
+  enabled: true
+  main_locale: en_US
+  arb_dir: lib/localization/l10
+  output_dir: lib/localization/generated
