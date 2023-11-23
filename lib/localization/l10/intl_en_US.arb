@@ -1,0 +1,21 @@
+{
+  "pictures": "Pictures",
+  "comments": "Comments",
+  "gallery": "GALLERY",
+  "commentName": "Name: {name}",
+  "@commentName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "commentEmail": "Email: {email}",
+  "@commentEmail": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  }
+}
