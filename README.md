@@ -2,5 +2,5 @@
 
 The Code Brothers recruitment task.
 
-# Running app
+### Running app
 To run the app use "flutter run" command and choose device of your choice.
